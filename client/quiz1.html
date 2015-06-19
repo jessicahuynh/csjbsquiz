@@ -32,32 +32,35 @@
 		</form>
 	</div>
 	<div class="col-sm-6">
-		<table class="table table-hover table-striped">
-			<thead>
-				<tr>
-					<th>Project name</th>
-					<th>Name</th>
-					<th>URL</th>
-					<th>Repo</th>
-					<th>&nbsp;</th>
-				</tr>
-			</thead>
-			<tbody>
-				{{#each projectData}}
-				<tr>
-					{{> projectInfo}}
-				</tr>
-				{{/each}}
-			</tbody>
-		</table>
+		<h2>List of submitted projects</h2>
+		<div class="table-responsive">
+			<table class="table table-hover table-striped">
+				<thead>
+					<tr>
+						<th>&nbsp;</th>
+						<th>Project name</th>
+						<th>Name</th>
+						<th>URL</th>
+						<th>Repo</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each projectData}}
+					<tr>
+						{{> projectInfo}}
+					</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
 	</div>
 </div>
 </template>
 
 <template name="projectInfo">
-	<td>{{projectName}}</td>
-	<td>{{firstName}} {{lastName}}</td>
+	<td><button class="delete-entry btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></td>
+	<td><span class="small">{{projectName}}</span></td>
+	<td><span class="small">{{firstName}} {{lastName}}</span></td>
 	<td><a href="{{projectURL}}" class="small">{{projectURL}}</a></td>
 	<td><a href="{{projectRepo}}" class="small">{{projectRepo}}</a></td>
-	<td><button class="delete-entry btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></td>
 </template>
